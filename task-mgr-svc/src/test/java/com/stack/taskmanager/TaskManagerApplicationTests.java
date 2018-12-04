@@ -17,13 +17,11 @@ public class TaskManagerApplicationTests {
 	
 	@Test
 	public void viewtask() {
-		System.out.println("view task   ");
 		svcTests.getAllTasks();
 	}
 	
 	@Test
 	public void addtask() {
-		System.out.println("view task   ");
 		TaskVO addVO = new TaskVO();	
 		addVO.setTaskId(1);
 		addVO.setParentTask("t1");
@@ -36,13 +34,11 @@ public class TaskManagerApplicationTests {
 	
 	@Test
 	public void delete() {
-		System.out.println("delete task   ");
 		svcTests.deleteTask(4);
 	}
 	
 	@Test
 	public void update() {
-		System.out.println("update task   ");
 		TaskVO updateVO = new TaskVO();	
 		updateVO.setTaskId(1);
 		updateVO.setPriority(30);
