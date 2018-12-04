@@ -21,7 +21,6 @@ public class TaskServiceImpl {
 			Integer i = (Integer)jdbcTemplate.queryForObject("select  coalesce(max(parent_id)+1,1) from parent_task", Integer.class);
 			String parentSql = "insert into parent_task(parent_id,parent_task) values("+i+",'"+task.getParentTask()+"')";
 			jdbcTemplate.execute(parentSql);  
-			System.out.println("ADD TASK DATA :" + task.getTask() + " " + task.getEndDate());
 			String sql = "INSERT INTO task(parent_id,task,start_date,end_date,priority,status) "
 					+ " VALUES("+i+",'"+task.getTask()+"','"+task.getStartDate()+"','"+task.getEndDate()+"','"+task.getPriority()+"','"+task.getStatus()+"')";
 			jdbcTemplate.execute(sql);
